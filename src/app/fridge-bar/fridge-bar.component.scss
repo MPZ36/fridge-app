@@ -1,0 +1,25 @@
+#header {
+  display: grid;
+  grid-template-columns: min-content auto;
+  background-color: #2D2E2E;
+  border-radius: 8px;
+  padding: 5px;
+  margin-bottom: 8px;
+}
+
+i {
+  color: white;
+}
+
+button {
+  background: none;
+  border: none;
+}
+
+input {
+  width: min-content;
+  margin: auto 0;
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
+}

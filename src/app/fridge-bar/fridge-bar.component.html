@@ -1,0 +1,25 @@
+<h1>My Food</h1>
+<div id="header">
+  <button (click)="onSelect()">
+    <i class="material-icons">add</i>
+  </button>
+  <input type="text" placeholder="search">
+</div>
+
+<div id="addForm" [hidden]="IsHidden">
+  <label>Food name:
+    <input #foodName />
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(foodName.value); foodName.value=''">
+    add
+  </button>
+</div>
+
+<ul class="foods">
+  <li *ngFor="let food of foods">
+    <a routerLink="/detail/{{food.id}}">
+      {{food.name}}
+    </a>
+  </li>
+</ul>

@@ -7,6 +7,21 @@
       <input [(ngModel)]="food.name" placeholder="name" />
     </label>
   </div>
+  <div>
+    <label>amount:
+      <input [(ngModel)]="food.amount" placeholder="amount" />
+    </label>
+  </div>
+  <div>
+    <label>unit:
+      <input [(ngModel)]="food.unit" placeholder="unit" />
+    </label>
+  </div>
+  <div>
+    <label>expires:
+      <input [(ngModel)]="food.expires" placeholder="expires" />
+    </label>
+  </div>
   <button (click)="save()">save</button>
   <button (click)="goBack()">go back</button>
 </div>

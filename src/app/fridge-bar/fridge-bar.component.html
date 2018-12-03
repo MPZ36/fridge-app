@@ -3,15 +3,26 @@
   <button (click)="onSelect()">
     <i class="material-icons">add</i>
   </button>
-  <input type="text" placeholder="search">
+  <app-food-search></app-food-search>
 </div>
 
 <div id="addForm" [hidden]="IsHidden">
-  <label>Food name:
+  <label>Name:
     <input #foodName />
   </label>
+  <label>Amount:
+    <input #foodAmount />
+  </label>
+  <label>Unit:
+    <select #foodUnit>
+      <option *ngFor="let unit of units"> {{unit}}</option>
+    </select>
+  </label>
+  <label>Expires:
+    <input type="date" #foodExpires />
+  </label>
   <!-- (click) passes input value to add() and then clears the input -->
-  <button (click)="add(foodName.value); foodName.value=''">
+  <button (click)="add(foodName.value, foodAmount.value, foodUnit.value, foodExpires.value); foodName.value=''">
     add
   </button>
 </div>
@@ -21,5 +32,10 @@
     <a routerLink="/detail/{{food.id}}">
       {{food.name}}
     </a>
+    {{food.amount}}
+ {{food.expires}}
+    <button class="delete" (click)="deleteFood(food)">
+      <i class="material-icons">clear</i>
+    </button>
   </li>
 </ul>

@@ -7,19 +7,23 @@
   margin-bottom: 8px;
 }
 
-i {
-  color: white;
-}
-
-button {
-  background: none;
-  border: none;
-}
-
 input {
   width: min-content;
   margin: auto 0;
   padding: 8px;
   border-radius: 8px;
+  border: none;
+}
+
+#addForm {
+  background-color: orange;
+}
+
+i {
+  color: green;
+}
+
+button {
+  background: none;
   border: none;
 }

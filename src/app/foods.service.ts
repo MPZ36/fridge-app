@@ -55,7 +55,28 @@ export class FoodsService {
     );
   }
 
+  /** DELETE: delete the food from the server */
+deleteFood (food: Food | number): Observable<Food> {
+  const id = typeof food === 'number' ? food : food.id;
+  const url = `${this.foodsUrl}/${id}`;
 
+  return this.http.delete<Food>(url, httpOptions).pipe(
+    tap(_ => this.log(`deleted food id=${id}`)),
+    catchError(this.handleError<Food>('deleteFood'))
+  );
+}
+
+/* GET heroes whose name contains search term */
+searchFoods(term: string): Observable<Food[]> {
+  if (!term.trim()) {
+    // if not search term, return empty hero array.
+    return of([]);
+  }
+  return this.http.get<Food[]>(`${this.foodsUrl}/?name=${term}`).pipe(
+    tap(_ => this.log(`found foods matching "${term}"`)),
+    catchError(this.handleError<Food[]>('searchFoods', []))
+  );
+}
 
   /**
  * Handle Http operation that failed.

@@ -12,6 +12,7 @@ import { FoodDetailComponent } from './food-detail/food-detail.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MessagesComponent } from './messages/messages.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { FoodSearchComponent } from './food-search/food-search.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     FoodDetailComponent,
     DashboardComponent,
     MessagesComponent,
-    SidebarComponent
+    SidebarComponent,
+    FoodSearchComponent
   ],
   imports: [
     BrowserModule,

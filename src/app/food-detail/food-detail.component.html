@@ -1,25 +1,26 @@
 <div *ngIf="food">
 
-  <h2>{{food.name | uppercase}} Details</h2>
-  <div><span>id: </span>{{food.id}}</div>
+  <h2>{{food.name}} Details</h2>
   <div>
-    <label>name:
+    <label>Name:
       <input [(ngModel)]="food.name" placeholder="name" />
     </label>
   </div>
   <div>
-    <label>amount:
-      <input [(ngModel)]="food.amount" placeholder="amount" />
+    <label>Amount:
+      <input type="number" [(ngModel)]="food.amount" placeholder="amount" />
     </label>
   </div>
   <div>
-    <label>unit:
-      <input [(ngModel)]="food.unit" placeholder="unit" />
+    <label>Unit:
+      <select [(ngModel)]="food.unit" value="unit">
+        <option *ngFor="let unit of units">{{unit}}</option>
+      </select> 
     </label>
   </div>
   <div>
-    <label>expires:
-      <input [(ngModel)]="food.expires" placeholder="expires" />
+    <label>Expires:
+      <input type="date" [(ngModel)]="food.expires" placeholder="expires" />
     </label>
   </div>
   <button (click)="save()">save</button>

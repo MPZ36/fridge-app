@@ -3,5 +3,5 @@ export class Food {
     name: string;
     amount: number;
     unit: string;
-    expires: string;
+    expires: Date;
 }

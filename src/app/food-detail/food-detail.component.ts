@@ -12,6 +12,8 @@ import { FoodsService } from '../foods.service';
 export class FoodDetailComponent implements OnInit {
   @Input() food: Food;
 
+  units: String[] = ['kg', 'gr', 'l', 'ml', 'pc/s']
+
   constructor(
     private route: ActivatedRoute,
     private foodService: FoodsService,

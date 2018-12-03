@@ -1,54 +1,63 @@
-<div><h1>My Food</h1>
-<div id="header">
-  <button (click)="onSelect()">
-    <i class="material-icons">add</i>
-  </button>
-  <input #searchBox id="search-box" (input)="search(searchBox.value)"/>
-</div>
+<div id="view">
+  <h1>My Food</h1>
 
-<div id="searchForm">
-  <ul class="search-result">
-      <li *ngFor="let food of foods$ | async" >
+
+  <div id="addForm" [hidden]="IsHidden">
+    <ul>
+      <li class="addlist"><label>Food:
+          <input #foodName required />
+        </label>
+      </li>
+      <li class="addlist"><label>Amount:
+          <input #foodAmount />
+        </label>
+      </li>
+      <li class="addlist"><label>Unit:
+          <select #foodUnit>
+            <option *ngFor="let unit of units">{{unit}}</option>
+          </select>
+        </label>
+      </li>
+      <li class="addlist"><label>Expires:
+          <input type="date" #foodExpires />
+        </label>
+      </li>
+    </ul>
+    <button id="addView" (click)="add(foodName.value, foodAmount.value, foodUnit.value, foodExpires.value); foodName.value=''">
+      add
+    </button>
+  </div>
+
+
+  <div id="header">
+    <button id="addPlus" (click)="onSelect()">
+      <i class="material-icons">add</i>
+    </button>
+    <input #searchBox id="search-box" (input)="search(searchBox.value)" />
+  </div>
+
+
+  <div id="searchForm">
+    <ul class="search-result">
+      <li class="search" *ngFor="let food of foods$ | async">
         <a routerLink="/detail/{{food.id}}">
           {{food.name}}
         </a>
       </li>
     </ul>
-</div>
+  </div>
 
-<div id="addForm" [hidden]="IsHidden">
-  <label>Name:
-    <input #foodName />
-  </label>
-  <label>Amount:
-    <input #foodAmount />
-  </label>
-  <label>Unit:
-    <select #foodUnit>
-      <option *ngFor="let unit of units">{{unit}}</option>
-    </select>
-  </label>
-  <label>Expires:
-    <input type="date" #foodExpires />
-  </label>
-  <!-- (click) passes input value to add() and then clears the input -->
-  <button (click)="add(foodName.value, foodAmount.value, foodUnit.value, foodExpires.value); foodName.value=''">
-    add
-  </button>
-</div>
 
-<ul class="foods">
-  <li *ngFor="let food of foods">
-    <a routerLink="/detail/{{food.id}}">
-      {{food.name}}
-    </a>
-    {{food.amount}}
-    {{food.unit}}
-    expires at:
- {{food.expires}}
-    <button class="delete" (click)="deleteFood(food)">
-      <i class="material-icons">delete_forever</i>
-    </button>
-  </li>
-</ul>
+  <ul class="foods">
+    <li class="fridge" *ngFor="let food of foods">
+      <div id="list-item">
+        <p><a routerLink="/detail/{{food.id}}">{{food.name}}</a></p>
+        <p>{{food.amount}}{{food.unit}}</p>
+        <p>expires at: {{food.expires}}</p>
+        <button id="delete" (click)="deleteFood(food)">
+          <i class="material-icons">delete_forever</i>
+        </button>
+      </div>
+    </li>
+  </ul>
 </div>

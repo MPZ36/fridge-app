@@ -8,10 +8,10 @@ import { Food } from './food';
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
     const foods = [
-      { id: 11, name: 'Apple', amount: 4, unit: 'pc/s', expires: '12.12.2012' },
-      { id: 12, name: 'Banana', amount: 2, unit: 'pc/s', expires: '13.12.2018' },
-      { id: 13, name: 'Joghurt', amount: 150, unit: 'l', expires: '04.12.2018' },
-      { id: 14, name: 'Honey', amount: 500, unit: 'gr', expires: '12.12.2019' }
+      { id: 11, name: 'Apple', amount: 4, unit: 'pc/s', expires: '2012-12-12' },
+      { id: 12, name: 'Banana', amount: 2, unit: 'pc/s', expires: '2018-07-12' },
+      { id: 13, name: 'Joghurt', amount: 150, unit: 'l', expires: '2018-04-12' },
+      { id: 14, name: 'Honey', amount: 500, unit: 'gr', expires: '2019-12-12' }
     ];
     return { foods };
   }

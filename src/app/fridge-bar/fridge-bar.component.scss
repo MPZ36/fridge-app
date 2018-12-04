@@ -1,11 +1,11 @@
 #view {
-  width: max-content;
+  width: 25em;
 
   #header {
-      display: flex;
-      margin: auto 0;
-      border-radius: 8px;
-      margin-bottom: 8px;
+    display: flex;
+    margin: auto 0;
+    border-radius: 8px;
+    margin-bottom: 8px;
 
     input {
       border-radius: 8px;
@@ -13,41 +13,43 @@
       background-color: white;
       text-align: center;
     }
+
+    #addPlus {
+      background: none;
+      border: none;
+      margin-right: 5px;
+    }
+
+
   }
 
   #addForm {
     width: min-content;
     display: grid;
-    grid-template-columns: auto auto;
-    background-color: #d3d3d3;
+    grid-template-columns: 40px 130px auto 130px;
+    grid-template-rows: auto auto;
+    grid-gap: 5px;
+    background-color: #eeeeee;
     padding: 5px;
     border-radius: 8px;
-
-    p {
-      width: min-content;
-      margin-bottom: -1px;
-    }
-
-    label {
-      margin-top: -15px;
-    }
+    margin-bottom: 10px;
 
     input {
-      margin-right: 15px;
-      margin-bottom: 15px;
-      padding: 10px;
+      height: 50%;
       border: none;
       border-radius: 5px;
+      margin: auto 0;
     }
 
-    select, input[type=number] {
+    select {
+      height: 50%;
+      margin: auto 0;
       -webkit-appearance: none;
       -moz-appearance: none;
       appearance: none;
-      padding: 10px;
       border: none;
+      border-radius: 5px;
       background-color: white;
-      width: 5em;
     }
 
     button#addView {
@@ -56,19 +58,21 @@
       padding: 8px;
       width: 5em;
       border-radius: 5px;
-      margin-top: -5px;
-      margin-bottom: 10px;
       color: white;
     }
   }
 
 
   ul.search-result {
+    display: flex;
     list-style-type: none;
     margin: 0;
     padding: 0;
 
     li {
+      background-color: none;
+      margin-right: 5px;
+
       a {
         font-size: 1.5em;
         text-decoration: none;
@@ -83,12 +87,6 @@
 
   li.addlist {
     margin-bottom: 5px;
-  }
-
-  #addPlus {
-    background: none;
-    border: none;
-    margin-right: 5px;
   }
 
   #searchForm {
@@ -125,6 +123,10 @@
         padding-left: 10px;
         width: max-content;
       }
+    }
+
+    #foods {
+      width: max-content;
     }
 
     #list-item {

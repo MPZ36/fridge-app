@@ -4,32 +4,27 @@
 
   <div id="header">
     <button id="addPlus" (click)="onSelect()">
-      <i class="material-icons">add</i>
+      <i class="material-icons">note_add</i>
     </button>
     <input #searchBox id="search-box" (input)="search(searchBox.value)" [hidden]="!IsHidden" placeholder="search for food" />
   </div>
 
   <div [hidden]="IsHidden">
-    <div id="addForm"> 
-    <label><p>Food:</p>
-          <input type="text" #foodName required />
-        </label>
-      <label><p>Amount:</p>
-          <input type="number" #foodAmount />
-        </label>
-      <label>
-        <p>Unit:</p>
-          <select #foodUnit>
-            <option *ngFor="let unit of units">{{unit}}</option>
-          </select>
-        </label>
-      <label><p>Expires:</p>
-          <input type="date" #foodExpires />
-        </label>
-    <button id="addView" (click)="add(foodName.value, foodAmount.value, foodUnit.value, foodExpires.value); foodName.value=''">
-      add
-    </button>
-  </div>
+    <div id="addForm">
+      <p>Food:</p>
+      <input type="text" #foodName required maxlength="20" />
+      <p>Amount:</p>
+      <input type="number" #foodAmount />
+      <p>Unit:</p>
+      <select #foodUnit>
+        <option *ngFor="let unit of units">{{unit}}</option>
+      </select>
+      <p>Expires:</p>
+      <input type="date" #foodExpires />
+      <button id="addView" (click)="add(foodName.value, foodAmount.value, foodUnit.value, foodExpires.value); foodName.value=''">
+        add
+      </button>
+    </div>
   </div>
 
 
@@ -43,17 +38,18 @@
     </ul>
   </div>
 
-
-  <ul class="foods">
-    <li class="fridge" *ngFor="let food of foods">
-      <div id="list-item">
-        <a routerLink="/detail/{{food.id}}">{{food.name}}</a>
-        <p>{{food.amount}}{{food.unit}}</p>
-        <p>expires at: {{food.expires}}</p>
-        <button id="delete" (click)="deleteFood(food)">
-          <i class="material-icons">delete_forever</i>
-        </button>
-      </div>
-    </li>
-  </ul>
+  <div id="foods">
+    <ul class="foods" [@listStagger]="foods">
+      <li class="fridge" *ngFor="let food of foods">
+        <div id="list-item">
+          <a routerLink="/detail/{{food.id}}">{{food.name}}</a>
+          <p>{{food.amount}}{{food.unit}}</p>
+          <p>expires at: {{food.expires}}</p>
+          <button id="delete" (click)="deleteFood(food)">
+            <i class="material-icons">delete_forever</i>
+          </button>
+        </div>
+      </li>
+    </ul>
+  </div>
 </div>

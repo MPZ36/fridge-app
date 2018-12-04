@@ -3,22 +3,25 @@ nav {
   height: 100%;
 
   ul {
-      list-style-type: none;
-      padding: 0;
-      margin: 0;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 
-      li {
+    li {
 
-          a {
-              color: #fff;
-              padding: 20px;
-              display: block;
-          }
-
-          .activated {
-              background-color: #00a8ff;
-          }
+      a {
+        color: #fff;
+        padding: 20px;
+        display: block;
       }
+
+      a:hover {
+        background-color: #00A8FF;
+      }
+    }
   }
-  
+
+  height: 100%;
+  position: fixed;
+
 }

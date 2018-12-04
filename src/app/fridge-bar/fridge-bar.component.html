@@ -9,30 +9,27 @@
     <input #searchBox id="search-box" (input)="search(searchBox.value)" [hidden]="!IsHidden" placeholder="search for food" />
   </div>
 
-  <div id="addForm" [hidden]="IsHidden">
-    <ul>
-      <li class="addlist"><label>Food:
-          <input #foodName required />
+  <div [hidden]="IsHidden">
+    <div id="addForm"> 
+    <label><p>Food:</p>
+          <input type="text" #foodName required />
         </label>
-      </li>
-      <li class="addlist"><label>Amount:
-          <input #foodAmount />
+      <label><p>Amount:</p>
+          <input type="number" #foodAmount />
         </label>
-      </li>
-      <li class="addlist"><label>Unit:
+      <label>
+        <p>Unit:</p>
           <select #foodUnit>
             <option *ngFor="let unit of units">{{unit}}</option>
           </select>
         </label>
-      </li>
-      <li class="addlist"><label>Expires:
+      <label><p>Expires:</p>
           <input type="date" #foodExpires />
         </label>
-      </li>
-    </ul>
     <button id="addView" (click)="add(foodName.value, foodAmount.value, foodUnit.value, foodExpires.value); foodName.value=''">
       add
     </button>
+  </div>
   </div>
 
 

@@ -1,0 +1,36 @@
+#form {
+    width: min-content;
+    display: block;
+    border-radius: 5px;
+    padding: 10px;
+
+    input, select {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 8px;
+        margin-top: 5px;
+        margin-bottom: 15px;
+        width: 12em;
+    }
+
+    select {
+    -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      padding: 10px;
+      border: none;
+      background-color: white;
+    }
+
+    button {
+    background-color: #00A8FF;
+    border: none;
+    padding: 8px;
+    width: 5em;
+    border-radius: 5px;
+    margin-top: 5px;
+    color: white;
+    margin-right: 5px;
+    }
+}

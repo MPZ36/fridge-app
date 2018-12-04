@@ -1,6 +1,7 @@
 <div *ngIf="food">
 
   <h2>{{food.name}} Details</h2>
+  <div id="form">
   <div>
     <label>Name:
       <input [(ngModel)]="food.name" placeholder="name" />
@@ -24,5 +25,6 @@
     </label>
   </div>
   <button (click)="save()">save</button>
-  <button (click)="goBack()">go back</button>
+  <button (click)="goBack()">back</button>
+</div>
 </div>

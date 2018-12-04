@@ -19,7 +19,7 @@ export class FridgeBarComponent implements OnInit {
   foods$: Observable<Food[]>;
   private searchTerms = new Subject<string>();
 
-  units: String[] = ['', 'kg', 'gr', 'l', 'ml', 'pc/s']
+  units: String[] = ['', 'kilogram', 'gram', 'liter', 'mililiter', 'piece/s']
   foods: Food[];
   IsHidden = true;
 

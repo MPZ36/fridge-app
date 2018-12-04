@@ -12,7 +12,7 @@ import { FoodsService } from '../foods.service';
 export class FoodDetailComponent implements OnInit {
   @Input() food: Food;
 
-  units: String[] = ['kg', 'gr', 'l', 'ml', 'pc/s']
+  units: String[] = ['kilogram', 'gram', 'liter', 'mililiter', 'piece/s']
 
   constructor(
     private route: ActivatedRoute,

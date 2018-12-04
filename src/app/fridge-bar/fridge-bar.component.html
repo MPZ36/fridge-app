@@ -47,7 +47,7 @@
   <ul class="foods">
     <li class="fridge" *ngFor="let food of foods">
       <div id="list-item">
-        <p><a routerLink="/detail/{{food.id}}">{{food.name}}</a></p>
+        <a routerLink="/detail/{{food.id}}">{{food.name}}</a>
         <p>{{food.amount}}{{food.unit}}</p>
         <p>expires at: {{food.expires}}</p>
         <button id="delete" (click)="deleteFood(food)">

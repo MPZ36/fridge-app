@@ -2,6 +2,11 @@
   width: max-content;
 
   #header {
+      display: flex;
+      margin: auto 0;
+      border-radius: 8px;
+      margin-bottom: 8px;
+
     input {
       border-radius: 8px;
       border: none;
@@ -14,12 +19,17 @@
     width: min-content;
     display: grid;
     grid-template-columns: auto auto;
-    border-radius: 5px;
     background-color: #d3d3d3;
-    padding: 10px;
+    padding: 5px;
+    border-radius: 8px;
 
     p {
       width: min-content;
+      margin-bottom: -1px;
+    }
+
+    label {
+      margin-top: -15px;
     }
 
     input {
@@ -38,6 +48,17 @@
       border: none;
       background-color: white;
       width: 5em;
+    }
+
+    button#addView {
+      background-color: #00A8FF;
+      border: none;
+      padding: 8px;
+      width: 5em;
+      border-radius: 5px;
+      margin-top: -5px;
+      margin-bottom: 10px;
+      color: white;
     }
   }
 
@@ -62,23 +83,6 @@
 
   li.addlist {
     margin-bottom: 5px;
-  }
-
-  button#addView {
-    background-color: #00A8FF;
-    border: none;
-    padding: 8px;
-    width: 5em;
-    border-radius: 5px;
-    margin-top: 5px;
-    color: white;
-  }
-
-  #header {
-    display: flex;
-    margin: auto 0;
-    border-radius: 8px;
-    margin-bottom: 8px;
   }
 
   #addPlus {
@@ -116,6 +120,7 @@
       }
 
       p {
+        font-size: 12px;
         margin: auto 0;
         padding-left: 10px;
         width: max-content;

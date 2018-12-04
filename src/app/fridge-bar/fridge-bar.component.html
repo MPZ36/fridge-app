@@ -2,6 +2,13 @@
   <h1>My Food</h1>
 
 
+  <div id="header">
+    <button id="addPlus" (click)="onSelect()">
+      <i class="material-icons">add</i>
+    </button>
+    <input #searchBox id="search-box" (input)="search(searchBox.value)" [hidden]="!IsHidden" placeholder="search for food" />
+  </div>
+
   <div id="addForm" [hidden]="IsHidden">
     <ul>
       <li class="addlist"><label>Food:
@@ -26,14 +33,6 @@
     <button id="addView" (click)="add(foodName.value, foodAmount.value, foodUnit.value, foodExpires.value); foodName.value=''">
       add
     </button>
-  </div>
-
-
-  <div id="header">
-    <button id="addPlus" (click)="onSelect()">
-      <i class="material-icons">add</i>
-    </button>
-    <input #searchBox id="search-box" (input)="search(searchBox.value)" />
   </div>
 
 

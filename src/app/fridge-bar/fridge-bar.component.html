@@ -3,8 +3,8 @@
 
 
   <div id="header">
-    <button id="addPlus" (click)="onSelect()">
-      <i class="material-icons">note_add</i>
+    <button id="addPlus" (click)="onSelect()" >
+      <i class="material-icons" [ngClass]="{'noaddview' : toggle, 'addview': !toggle}">note_add</i>
     </button>
     <input #searchBox id="search-box" (input)="search(searchBox.value)" [hidden]="!IsHidden" placeholder="search for food" />
   </div>

@@ -48,6 +48,8 @@ export class FridgeBarComponent implements OnInit {
   units: String[] = ['', 'kilogram', 'gram', 'liter', 'mililiter', 'piece/s']
   foods: Food[];
   IsHidden = true;
+  toggle = true;
+  status = 'Enable';
 
   constructor(private foodService: FoodsService) { }
 
@@ -73,6 +75,8 @@ export class FridgeBarComponent implements OnInit {
 
   onSelect() {
     this.IsHidden = !this.IsHidden;
+    this.toggle = !this.toggle;
+    this.status = this.toggle ? 'Enable' : 'Disable';
   }
 
   getFoods(): void {
